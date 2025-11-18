@@ -18,7 +18,7 @@ class Products:
         date = date_match.group() if date_match else None
 
         quantity_match = re.search(r"(?<!\.)\b([1-9]\d*)\b(?!\.)", line)
-        quantity = quantity_match.group(1) if quantity_match else None
+        quantity = quantity_match.group() if quantity_match else None
 
         name_match = re.search(r'"([^"]*)"', line)
         product_name = name_match.group(1).strip() if name_match else None
@@ -58,4 +58,5 @@ def main():
 # добавить выбор сортировки по разным фильтрам (добавить сортировку по дате)
 if __name__ == "__main__":
     main()
+
 
